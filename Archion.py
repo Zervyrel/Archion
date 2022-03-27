@@ -15,6 +15,11 @@ if __name__ == "__main__":
             client.load_extension(f"Cogs.{filename[:-3]}")
 client.load_extension("jishaku")
 
+@client.command()
+async def shutdown(ctx):
+    await ctx.send("Shutting down...)
+    exit()
+
 with open("Database/Config.json", "r") as file:
     data = json.load(file)
     token = data["token"]
