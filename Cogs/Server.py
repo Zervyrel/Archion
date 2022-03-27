@@ -5,14 +5,6 @@ from discord.ext import commands
 class Server(commands.Cog):
     def __init__(self, client):
         self.client = client
-
-    @commands.Cog.listener()
-    async def on_guild_join(self, guild: discord.Guild):
-        try:
-            await guild.create_text_channel("Test")
-
-        except Exception as e:
-            print(e)
     
     @commands.Cog.listener()
     async def on_guild_join(self, guild: discord.Guild):
