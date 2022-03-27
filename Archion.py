@@ -1,7 +1,7 @@
 import os
 import json
 import discord
-from discord.ext import commands, tasks
+from discord.ext import commands
 
 client = commands.Bot(
     commands.when_mentioned_or(*"."),
