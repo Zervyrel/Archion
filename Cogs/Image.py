@@ -8,7 +8,7 @@ from discord.commands import slash_command
 class Image(commands.Cog):
     def __init__(self, client):
         self.client = client
-        self.test_task.start()
+        self.image_check()
 
     @slash_command()
     async def image_save(self, ctx, attachment: discord.Attachment):
@@ -26,13 +26,13 @@ class Image(commands.Cog):
         await ctx.respond(file=discord.File(f"Images/{random_image}"), delete_after=20)
 
     @tasks.loop(seconds=20)
-    async def test_task(self):
+    async def image_check(self):
         for images in os.listdir("images"):
             if not images.endswith((".png", ".jpg", ".jepg")):
                 os.remove(f"Images/{images}")
 
-    @test_task.before_loop
-    async def before_test_task(self):
+    @image_check.before_loop
+    async def before_image_check(self):
         await self.client.wait_until_ready()
 
 def setup(client):
