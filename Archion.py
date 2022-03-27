@@ -7,8 +7,7 @@ client = commands.Bot(
     commands.when_mentioned_or(*"."),
     intents=discord.Intents.all(),
     help_command=None,
-    case_intensitive=True,
-    debug_guilds=[id])
+    case_intensitive=True)
 
 if __name__ == "__main__":
     for filename in os.listdir("Cogs"):
