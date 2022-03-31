@@ -6,7 +6,7 @@ from discord.ext import commands
 from discord.ui import View, Button
 
 client = commands.Bot(
-    commands.when_mentioned_or(*"."),
+    commands.when_mentioned_or(*"^"),
     intents=discord.Intents.all(),
     help_command=None,
     case_intensitive=True)
