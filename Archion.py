@@ -10,7 +10,7 @@ client = commands.Bot(
     intents=discord.Intents.all(),
     help_command=None,
     case_intensitive=True,
-    debug_guilds=[903607882564636683]) #Remove this line to get global slash commands
+    debug_guilds=[guildID]) #Remove this line to get global slash commands
                                        #debug_guilds if for testing the slash commands on the test Server
 
 if __name__ == "__main__":
