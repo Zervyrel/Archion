@@ -16,6 +16,7 @@ class Server(commands.Cog):
         embed.add_field(name="Channels", value=len(guild.channels), inline=False)
         embed.add_field(name="Serverid", value=guild.id, inline=False)
         embed.add_field(name="Created at", value=guild.created_at.strftime("%d/%m/%Y %H:%M:%S"), inline=False)
+        embed.add_field(name="Status", value="Joined", inline=False)
         channel = self.client.get_channel(id)
         await channel.send(embed=embed)
 
@@ -29,6 +30,7 @@ class Server(commands.Cog):
         embed.add_field(name="Channels", value=len(guild.channels), inline=False)
         embed.add_field(name="Serverid", value=guild.id, inline=False)
         embed.add_field(name="Created at", value=guild.created_at.strftime("%d/%m/%Y %H:%M:%S"), inline=False)
+        embed.add_field(name="Status", value="Left", inline=False)
         channel = self.client.get_channel(id)
         await channel.send(embed=embed)
 
