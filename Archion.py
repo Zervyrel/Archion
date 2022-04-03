@@ -23,22 +23,4 @@ with open("Database/Config.json", "r") as file:
     data = json.load(file)
     token = data["token"]
 
-@client.slash_command(description="Invites the Archion bot to your Server")
-async def invite(ctx):
-    button = Button(label="Invite", url=f"https://discord.com/api/oauth2/authorize?client_id={client.user.id}&permissions=2147601408&scope=bot%20applications.commands")
-    view = View()
-    view.add_item(button)
-    await ctx.respond("To invite me press the Button below this message", view=view)
-
-@client.command()
-async def shutdown(ctx):
-    await ctx.send("Shutting down...")
-    exit()
-
-@client.command()
-async def restart(ctx):
-    await ctx.send("Restarting...")
-    os.system("clear")
-    os.execv(sys.executable, ["python"] + sys.argv)
-
 client.run(token)
