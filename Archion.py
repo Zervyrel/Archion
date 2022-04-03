@@ -11,8 +11,7 @@ client = commands.Bot(
     help_command=None,
     case_intensitive=True,
     debug_guilds=[guildID]) #Remove this line to get global slash commands
-                                       #debug_guilds if for testing the slash commands on the test Server
-
+                            #debug_guilds if for testing the slash commands on the test Server
 if __name__ == "__main__":
     for filename in os.listdir("Cogs"):
         if filename.endswith(".py"):
