@@ -2,10 +2,9 @@ import os
 import sys
 import json
 import discord
-from discord.ext import commands
-from discord.ui import View, Button
+from discord.ext import commands, bridge
 
-client = commands.Bot(
+client = bridge.Bot(
     commands.when_mentioned_or(*"^"),
     intents=discord.Intents.all(),
     help_command=None,
